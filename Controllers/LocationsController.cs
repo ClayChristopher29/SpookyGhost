@@ -22,7 +22,8 @@ namespace Ghost.Controllers
         // GET: Locations
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Location.ToListAsync());
+            var model = await _context.Location.Include(l => l.Investigations).ToListAsync();
+            return View(model);
         }
 
         // GET: Locations/Details/5
@@ -32,9 +33,12 @@ namespace Ghost.Controllers
             {
                 return NotFound();
             }
+            var model = await _context.Location.Include(l => l.Investigations).ToListAsync();
 
-            var location = await _context.Location
+            var location = await _context.Location.Include(l => l.Investigations).ThenInclude(i=>i.Evidence)
                 .FirstOrDefaultAsync(m => m.Id == id);
+            
+
             if (location == null)
             {
                 return NotFound();

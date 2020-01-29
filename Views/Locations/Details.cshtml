@@ -4,39 +4,33 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Location Details</h1>
 
 <div>
-    <h4>Location</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Summary)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Summary)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Hours)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Hours)
-        </dd>
-    </dl>
+    <div class="card">
+        <h5 class="card-header">
+                @Html.DisplayFor(model => model.Name)
+            </h5>
+        <div class="card-body">
+            <h5 class="card-title">
+                @Html.DisplayFor(model => model.PhNumber)
+            </h5>
+            <p class="card-text">@Html.DisplayFor(model => model.Summary)</p>
+            <p class="card-text">@Html.DisplayFor(model => model.Hours)</p>
+            <h5>Captured Evidence</h5>
+            @foreach (Investigation currentInvestigation in @Model.Investigations) { 
+                foreach (Evidence currentEvidence in currentInvestigation.Evidence) { 
+                    <p>@currentEvidence.Type</p>
+                    <iframe src="@currentEvidence.MyAudio" src="@currentEvidence.MyVideo"></iframe>
+                    
+                } 
+            }
+
+
+
+
+            <a asp-action="Index" class="btn btn-primary">Back</a>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
