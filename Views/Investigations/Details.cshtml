@@ -6,32 +6,15 @@
 
 <h1>Details</h1>
 
-<div>
-    <h4>Investigation</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Location.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Location.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isPrivate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isPrivate)
-        </dd>
-    </dl>
+<div class="card" style="width: 45rem;">
+    <img src="https://www.nydailynews.com/resizer/n1pqz9qGfJHOL73vytf6C6baGic=/1400x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/E2ACVPVFWRGHZHQ56C3IKEXEUM.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="card-text">@Html.DisplayFor(model => model.Date)</p>
+        <p class="card-text">@Html.DisplayFor(model => model.Location.Name)</p>
+        <p class="card-text">@Html.DisplayFor(model => model.Summary)</p>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-controller ="Evidences" asp-action="Create">Add Evidence</a> |
-    <a asp-action="Index">Back to List</a>
+<button type="button" class="btn btn-outline-dark"><a asp-action="Edit" asp-route-id="@Model.Id">Edit</a></button>
+<button type="button" class="btn btn-outline-dark"><a asp-controller="Evidences" asp-action="Create">Add Evidence</a></button>
+<button type="button" class="btn btn-outline-dark"><a asp-action="Index">Back to List</a></button>
 </div>
