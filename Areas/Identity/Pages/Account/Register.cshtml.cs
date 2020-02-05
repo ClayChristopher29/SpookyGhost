@@ -91,8 +91,7 @@ namespace Ghost.Areas.Identity.Pages.Account
                     UserName = Input.Email,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
-                    NewUserName = Input.NewUserName,
-                    Email = Input.Email
+                    NewUserName = Input.NewUserName
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
