@@ -4,14 +4,16 @@ using Ghost.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ghost.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200130144048_newyoutube2")]
+    partial class newyoutube2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,7 +102,7 @@ namespace Ghost.Data.Migrations
                         {
                             Id = "0000222211-22221111",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "898dd8b6-4143-4aa3-bf2d-a7c4e2092576",
+                            ConcurrencyStamp = "1f729743-8a64-4923-bcd3-5ce6c1771a14",
                             Email = "Ryan@Ryan.com",
                             EmailConfirmed = true,
                             FirstName = "Ryan",
@@ -108,7 +110,7 @@ namespace Ghost.Data.Migrations
                             LockoutEnabled = false,
                             NewUserName = "Ghost_Ryan",
                             NormalizedEmail = "RYAN@RYAN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAfYHvW/Ovc2mPHG0QcLoG8xM20v5CfkCDa3xA6cNZGVFxaZYzm35C7l8ldSgig46w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMkf7tvGpbf5HdwklAF2jFaSUXBCuauf+BDuKflsZSYtB0XoEfns+G2BDKPoW39O+Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "12345-6789-ffffff",
                             TwoFactorEnabled = false
@@ -181,7 +183,7 @@ namespace Ghost.Data.Migrations
                             Id = 3,
                             Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InvestigationId = 2,
-                            MyVideo = "https://www.youtube.com/embed/RTSN4eovN6A?list=PLDFTJm5CqjzeGOvfnFm6OzGv9upFR9D1n",
+                            MyVideo = "https://youtu.be/nFqpo0zcvow",
                             Summary = "Spooky Ghost was seen here",
                             Type = "Video",
                             UserId = "0000222211-22221111"

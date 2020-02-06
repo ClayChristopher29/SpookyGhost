@@ -7,10 +7,11 @@
 <h1>Location Details</h1>
 
 <div>
-    <div class="card">
+    <div class="card" style="width: 45rem;">
+        <img src="https://www.placesyoullsee.com/wp-content/uploads/2015/01/30-Most-Terrifying-Places-00.jpg"  class="card-img-top" alt="...">
         <h5 class="card-header">
-                @Html.DisplayFor(model => model.Name)
-            </h5>
+            @Html.DisplayFor(model => model.Name)
+        </h5>
         <div class="card-body">
             <h5 class="card-title">
                 @Html.DisplayFor(model => model.PhNumber)
@@ -18,12 +19,14 @@
             <p class="card-text">@Html.DisplayFor(model => model.Summary)</p>
             <p class="card-text">@Html.DisplayFor(model => model.Hours)</p>
             <h5>Captured Evidence</h5>
-            @foreach (Investigation currentInvestigation in @Model.Investigations) { 
-                foreach (Evidence currentEvidence in currentInvestigation.Evidence) { 
+            @foreach (Investigation currentInvestigation in @Model.Investigations)
+            {
+                foreach (Evidence currentEvidence in currentInvestigation.Evidence)
+                {
                     <p>@currentEvidence.Type</p>
                     <iframe src="@currentEvidence.MyAudio" src="@currentEvidence.MyVideo"></iframe>
-                    
-                } 
+
+                }
             }
 
 

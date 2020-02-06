@@ -4,14 +4,16 @@ using Ghost.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ghost.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200130144817_newyoutube3")]
+    partial class newyoutube3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,7 +102,7 @@ namespace Ghost.Data.Migrations
                         {
                             Id = "0000222211-22221111",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "898dd8b6-4143-4aa3-bf2d-a7c4e2092576",
+                            ConcurrencyStamp = "b59ce74f-9e18-4558-be59-6c497b832bb0",
                             Email = "Ryan@Ryan.com",
                             EmailConfirmed = true,
                             FirstName = "Ryan",
@@ -108,7 +110,7 @@ namespace Ghost.Data.Migrations
                             LockoutEnabled = false,
                             NewUserName = "Ghost_Ryan",
                             NormalizedEmail = "RYAN@RYAN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAfYHvW/Ovc2mPHG0QcLoG8xM20v5CfkCDa3xA6cNZGVFxaZYzm35C7l8ldSgig46w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEK7FITFVcj5BoH2kx639BcTAHh4ZDH+nxX8U10GY3zj5nEX8y47xOYDSNLQ6zRMJFQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "12345-6789-ffffff",
                             TwoFactorEnabled = false

@@ -48,17 +48,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Summary)
             </td>
+            <th>
+                <iframe src="@item.MyAudio"></iframe>
+            </th>
             <td>
-                @Html.DisplayFor(modelItem => item.MyAudio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MyVideo)
+                <iframe  src="@item.MyVideo"></iframe>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Investigation.Summary)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
+                @Html.DisplayFor(modelItem => item.User.FirstName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

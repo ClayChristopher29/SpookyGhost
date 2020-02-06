@@ -63,7 +63,7 @@ namespace Ghost.Data
                     Summary = "Spooky Ghost was seen here",
                     InvestigationId = 2,
                     MyAudio= null,
-                    MyVideo = "https://youtu.be/vh99uSI22BU"
+                    MyVideo =  "https://www.youtube.com/embed/otMctguGofg"
                 },
                 new Evidence()
                   {
@@ -73,7 +73,7 @@ namespace Ghost.Data
                     Summary = "Spooky Ghost was seen here",
                     InvestigationId = 2,
                     MyAudio = null,
-                    MyVideo = "https://youtu.be/nFqpo0zcvow"
+                    MyVideo = "https://www.youtube.com/embed/RTSN4eovN6A?list=PLDFTJm5CqjzeGOvfnFm6OzGv9upFR9D1n"
                 }
                 );
             modelBuilder.Entity<Investigation>().HasData(
