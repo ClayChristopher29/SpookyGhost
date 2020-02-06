@@ -7,21 +7,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ghost.Data;
 using Ghost.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ghost.Controllers
 {
     public class EvidencesController : Controller
     {
+        
         private readonly ApplicationDbContext _context;
+        
 
         public EvidencesController(ApplicationDbContext context)
         {
+            
             _context = context;
         }
-
+        
         // GET: Evidences
         public async Task<IActionResult> Index()
         {
+            
             var applicationDbContext = _context.Evidence.Include(e => e.Investigation).Include(e => e.User);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -63,6 +68,8 @@ namespace Ghost.Controllers
         {
             if (ModelState.IsValid)
             {
+                ModelState.Remove("UserId");
+                ModelState.Remove("User");
                 _context.Add(evidence);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
