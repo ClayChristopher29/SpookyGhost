@@ -11,34 +11,79 @@
 <div class="card text-white bg-dark mb-3" style="max-width: 45rem;">
     <div class="card-header">New Evidence</div>
     <div class="card-body">
-        <h5 class="card-title">Add Summary of Evidence Collected</h5>
-        <p class="card-text">
-            <label asp-for="Summary" class="control-label"></label>
-            <textarea class="form-control" aria-label="With textarea" asp-for="Summary"></textarea>
-            <span asp-validation-for="Summary" class="text-danger"></span>
-        </p>
-        <h5 class="card-header">Add Audio File</h5>
-        <p class="card-text">
-            <label asp-for="MyAudio" class="control-label"></label>
-            <input asp-for="MyAudio"></input>
-            <span asp-validation-for="MyAudio" class="text-danger"></span>
-        </p>
-        <h5 class="card-header">Add Video File</h5>
-        <p class="card-text">
-            <label asp-for="MyVideo" class="control-label"></label>
-            <input asp-for="MyVideo"></input>
-            <span asp-validation-for="MyVideo" class="text-danger"></span>
-        </p>
-        <input type="submit" value="Create" class="btn btn-outline-success" />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Type" class="control-label"></label>
+                        <input asp-for="Type" class="form-control" />
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Summary" class="control-label"></label>
+                        <input asp-for="Summary" class="form-control" />
+                        <span asp-validation-for="Summary" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MyAudio" class="control-label"></label>
+                        <input asp-for="MyAudio" class="form-control" />
+                        <span asp-validation-for="MyAudio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MyVideo" class="control-label"></label>
+                        <input asp-for="MyVideo" class="form-control" />
+                        <span asp-validation-for="MyVideo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="InvestigationId" class="control-label"></label>
+                        <select asp-for="InvestigationId" class="form-control" asp-items="ViewBag.InvestigationId"></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
 
-    </div>
-</div>
 
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+        @*<form asp-action="Create">
+                <div class="card text-white bg-dark mb-3" style="max-width: 45rem;">
+                    <div class="card-header">New Evidence</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Add Summary of Evidence Collected</h5>
+                        <p class="card-text">
+                            <label asp-for="Summary" class="control-label"></label>
+                            <textarea class="form-control" aria-label="With textarea" asp-for="Summary"></textarea>
+                            <span asp-validation-for="Summary" class="text-danger"></span>
+                        </p>
+                        <h5 class="card-header">Add Audio File</h5>
+                        <p class="card-text">
+                            <label asp-for="MyAudio" class="control-label"></label>
+                            <input asp-for="MyAudio"></input>
+                            <span asp-validation-for="MyAudio" class="text-danger"></span>
+                        </p>
+                        <h5 class="card-header">Add Video File</h5>
+                        <p class="card-text">
+                            <label asp-for="MyVideo" class="control-label"></label>
+                            <input asp-for="MyVideo"></input>
+                            <span asp-validation-for="MyVideo" class="text-danger"></span>
+                        </p>
+                        <input type="submit" value="Create" class="btn btn-outline-success" />
+                        <button type="button" class="btn btn-outline-dark"><a asp-action="Index">Back to List</a></button>
+
+                    </div>
+                </div>
+            </form>*@
+
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

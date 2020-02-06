@@ -123,6 +123,8 @@ namespace Ghost.Controllers
             {
                 try
                 {
+                    var currentUser = await GetCurrentUserAsync();
+                    investigation.UserId = currentUser.Id;
                     _context.Update(investigation);
                     await _context.SaveChangesAsync();
                 }
